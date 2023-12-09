@@ -14,7 +14,8 @@ def findXSPF():
         filesInDirectory = os.listdir(ruta_music)
         correctFile = [file for file in filesInDirectory if file.endswith('xspf')]
         if len(correctFile) == 0:
-            return "No se encontró el xspf"
+            print("No se encontró el xspf")
+            return None
         elif len(correctFile) == 1:
             return correctFile
         elif len(correctFile) > 1:
@@ -24,4 +25,6 @@ def findXSPF():
     elif len(correctFile) > 1:
         return correctFile[0]
 
-print(findXSPF())
+if __name__ == "__main__":
+
+    print(findXSPF())
