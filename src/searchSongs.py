@@ -1,11 +1,10 @@
-from findXSPF import findXSPF
 import xml.etree.ElementTree as ET
 
-def searchSongs():
+def searchSongs(locationXSPF):
     songs = []
 
-    if findXSPF() is not None:
-        tree = ET.parse(findXSPF())
+    if locationXSPF is not None:
+        tree = ET.parse(locationXSPF)
         root = tree.getroot()
 
         for track in root.findall('.//{http://xspf.org/ns/0/}track'):
@@ -20,5 +19,6 @@ def searchSongs():
     
 if __name__ == "__main__":
 
-    print(findXSPF())
-    print(searchSongs())
+    from findXSPF import findXSPF
+
+    print(searchSongs(findXSPF()))

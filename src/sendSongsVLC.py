@@ -1,13 +1,17 @@
-from randomizer import randomizer
-from searchSongs import searchSongs
 import subprocess
 
-def sendSongsVLC():
-    if len(searchSongs()) > 1:
+def sendSongsVLC(array):
+    if len(array) > 1:
         print("Ha funcionado")
-        subprocess.run("cd C:\Program Files\VideoLAN\VLC", shell=True)
+        subprocess.run([r"C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"]+array, shell=True)
+        return None
     else:
         print("No se ha encontrado ninguna canción")
         return None
     
-print(sendSongsVLC())
+if __name__ == "__main__":
+    from searchSongs import searchSongs
+    from findXSPF import findXSPF
+    from randomizer import randomizer
+    
+    print(sendSongsVLC(randomizer(searchSongs(findXSPF()))))
