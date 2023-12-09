@@ -3,20 +3,22 @@ import xml.etree.ElementTree as ET
 
 def searchSongs():
     songs = []
+
     if findXSPF() is not None:
-        tree = ET.parse(''.join(map(str, findXSPF())))
+        tree = ET.parse(findXSPF())
         root = tree.getroot()
-        for child in root.findall('.//tracklist/track/location'):
-            print(child)
-            location = child.text
-            songs.append(location)
-        return tree
+
+        for track in root.findall('.//{http://xspf.org/ns/0/}track'):
+            locationElement = track.find('{http://xspf.org/ns/0/}location')
+            if locationElement is not None and locationElement.text:
+                songs.append(locationElement.text)
+
+        return songs
     else:
-        print("No se encontró el XSPF por lo que no se puede crear una lista de canciones")
+        print("No se encontró el archivo XSPF, no se puede crear una lista de canciones.")
         return None
     
 if __name__ == "__main__":
 
+    print(findXSPF())
     print(searchSongs())
-
-    #C:\Users\Nitiriotan\Desktop\proyectoVLC\Randomized-songs-in-VLC
