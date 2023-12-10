@@ -1,9 +1,8 @@
 import xml.etree.ElementTree as ET
 
 def searchSongs(locationXSPF):
-    songs = []
-
     if locationXSPF is not None:
+        songs = []
         tree = ET.parse(locationXSPF)
         root = tree.getroot()
 
@@ -12,7 +11,11 @@ def searchSongs(locationXSPF):
             if locationElement is not None and locationElement.text:
                 songs.append(locationElement.text)
 
-        return songs
+        if len(songs) > 1:
+            return songs
+        else:
+            print("No hay canciones dentro del XSPF")
+            return None
     else:
         print("No se encontró el archivo XSPF, no se puede crear una lista de canciones.")
         return None

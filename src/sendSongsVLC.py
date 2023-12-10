@@ -1,10 +1,14 @@
 import subprocess
 
 def sendSongsVLC(array):
-    if len(array) > 1:
+
+    if isinstance(array, list) != True:
+        return None
+    
+    if len(array) >= 1:
         print("Ha funcionado")
         subprocess.run([r"C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"]+array, shell=True)
-        return None
+        return True
     else:
         print("No se ha encontrado ninguna canción")
         return None
