@@ -19,7 +19,7 @@ def findXSPF():
         elif len(correctFile) >= 1:
             return ruta_music + correctFile[0]
     elif len(correctFile) >= 1:
-        return r"C:\\Users\\"+ userName + r"\\Desktop\\proyectoVLC\\Randomized-songs-in-VLC\\" + correctFile[0]
+        return r"C:\\Users\\"+ userName + r"\\Desktop\\proyectoVLC\\Randomized-songs-in-VLC\\" +      correctFile[0]
 
 if __name__ == "__main__":
 

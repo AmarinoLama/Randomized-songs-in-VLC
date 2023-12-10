@@ -20,9 +20,9 @@ if __name__ == "__main__":
     from searchSongs import searchSongs
     from findXSPF import findXSPF
     
-    #print(randomizer(["cancion1","cancion2","cancion3","cancion4","cancion5"]))
-    #assert randomizer(["cancion1","cancion2","cancion3","cancion4","cancion5"]) != {'cancion1':1,'cancion2':2,'cancion3':3,'cancion4':4,'cancion5':5}
-    #assert randomizer(1) == None
-    #assert randomizer([]) == None
+    print(randomizer(["cancion1","cancion2","cancion3","cancion4","cancion5"]))
+    assert randomizer(["cancion1","cancion2","cancion3","cancion4","cancion5"]) == ["cancion1","cancion2","cancion3","cancion4","cancion5"]
+    assert randomizer(1) == None
+    assert randomizer([]) == None
 
     print(randomizer(searchSongs(findXSPF())))
