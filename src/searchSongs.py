@@ -10,7 +10,7 @@ def searchSongs(locationXSPF):
         root = tree.getroot()
 
         # se busca en el xspf las rutas de las canciones y se guardan en una lista
-
+    
         for track in root.findall('.//{http://xspf.org/ns/0/}track'):
             locationElement = track.find('{http://xspf.org/ns/0/}location')
             if locationElement is not None and locationElement.text:

@@ -3,4 +3,6 @@ from src.searchSongs import searchSongs
 from src.findXSPF import findXSPF
 from src.randomizer import randomizer
 
-print(sendSongsVLC(randomizer(searchSongs(findXSPF()))))
+if __name__ == "__main__":
+
+    sendSongsVLC(randomizer(searchSongs(findXSPF())))
