@@ -4,8 +4,8 @@ from src.findXSPF import findXSPF
 from src.randomizer import randomizer
 
 def test_songSended():
-    assert (sendSongsVLC(randomizer(searchSongs(findXSPF())))) is True
-    assert (sendSongsVLC(["cancion1", "cancion2"])) is True
+    assert (sendSongsVLC(randomizer(searchSongs(findXSPF())))) == "Ha funcionado"
+    assert (sendSongsVLC(["cancion1", "cancion2", "cancion3"])) == "Ha funcionado"
 
 def test_notSongs():
     assert (sendSongsVLC([])) is None

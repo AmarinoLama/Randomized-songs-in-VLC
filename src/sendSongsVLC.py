@@ -14,7 +14,7 @@ def sendSongsVLC(array):
 
         # Se ejecuta el comando
 
-        subprocess.run([r"C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"]+array, shell=True)
+        subprocess.run([r"C:\\Program Files\\VideoLAN\\VLC\\vlc.exe"] + array, shell=True)
 
         # Se devuelve un mensaje conforme a funcionado todo correctamente
 

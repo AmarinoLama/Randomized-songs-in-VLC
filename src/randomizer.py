@@ -33,7 +33,7 @@ if __name__ == "__main__":
     from findXSPF import findXSPF
     
     print(randomizer(["cancion1","cancion2","cancion3","cancion4","cancion5"]))
-    assert randomizer(["cancion1","cancion2","cancion3","cancion4","cancion5"]) == ["cancion1","cancion2","cancion3","cancion4","cancion5"]
+    assert randomizer(["cancion1","cancion2","cancion3","cancion4","cancion5"]) != ["cancion1","cancion2","cancion3","cancion4","cancion5"]
     assert randomizer(1) == None
     assert randomizer([]) == None
 
