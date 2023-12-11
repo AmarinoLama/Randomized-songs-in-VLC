@@ -139,9 +139,9 @@ Finalmente, esta la aplicación que es "[app.py](app.py)", está hará todos los
 
 Cabe destacar que se contemplan todas las posibles situaciones, quiere decir que en cualquier caso que no haya llegado una lista u otros casos similares como que en vez de una lista sea un string y vicebersa, el programa devolverá un None e informará del error en cuestión.
 
-1. Foto del diagrama de argumentos
+1. Foto del diagrama de arquitectura
 
-![DiagramaDeArgumentos](img/DiagramaDeArgumentos.png)
+![DiagramaDeArquitectura](img/DiagramaDeArquitectura.png)
 
 2. Foto del diagrama de Componentes
 
@@ -151,21 +151,21 @@ Cabe destacar que se contemplan todas las posibles situaciones, quiere decir que
 
 La estructura de la aplicación, es decir el programa en sí, es es la siguiente:
 
-- carpeta src
+- Carpeta src
 
 1. findXSPF.py
 2. randomizer.py
 3. searchSongs.py
 4. sendSongsVLC.py
 
-- carpeta test
+- Carpeta test
 
 1. test_findXSPF.py
 2. test_randomizer.py
 3. test_searchSongs.py
 4. test_sendSongsVLC.py
 
-- fuera de la carpeta 
+- Fuera de la carpeta 
 
 1. app.py
 
@@ -173,7 +173,7 @@ La estructura de la aplicación, es decir el programa en sí, es es la siguiente
 
 Para el programa se usa un archivo ".xspf" este tiene la siguiente estructura:
 
-![ejemploXSPF](img/ejemploXSPD.png)
+![ejemploXSPF](img/ejemploXSPF.png)
 
 ## Pruebas
 
@@ -197,7 +197,7 @@ El programa devolverá un None acompañado de un mensaje informando la situació
 
 ## Coverage
 
-En la carpeta "[coverage_annotation](coverage_annotation)" puedes ver por todas las líneas que pasa al ejecutarse este proyecto. Para generar este archivo han de ejecutarse los siguentes comandos en la terminal:
+En la carpeta "coverage_annotation" puedes ver por todas las líneas que pasa al ejecutarse este proyecto. Para generar este archivo han de ejecutarse los siguentes comandos en la terminal:
 
 ```bash
 $ coverage run --source ./src -m pytest
@@ -209,7 +209,7 @@ Este comando generará una tabla con los porcentajes de las líneas que se ejecu
 $ coverage annotate -d ./coverage_annotation
 ```
 
-Este comando creará en la carpeta otra carpeta llamada "[coverage_annotation](coverage_annotation)" (ya explicada anteriormente), la cual tiene "!" para las líneas que no se ejecutan y ">" para las líneas que se ejecutan.
+Este comando creará en la carpeta otra carpeta llamada "coverage_annotation" (ya explicada anteriormente), la cual tiene "!" para las líneas que no se ejecutan y ">" para las líneas que se ejecutan.
 
 Por otra parte, está el archivo "[.coveragec](.coveragec)" el cúal sirve para que en el porcentaje del primer comando no se tengan en cuenta las líneas del '"if __name__ == "__main__:"'
 
